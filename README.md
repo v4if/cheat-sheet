@@ -1,5 +1,4 @@
-# cheat-sheet-axe 
-![Language](https://img.shields.io/badge/language-vuejs-blue.svg?style=flat-square)
+# cheat-sheet-axe ![Language](https://img.shields.io/badge/language-vuejs-blue.svg?style=flat-square)
 基于vuejs的在线参考手册生成器
 
 * 用于将常用快捷键、零碎知识点等参考手册整理在一起

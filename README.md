@@ -23,14 +23,14 @@ npm run build --report
 
 ## 部署效果图
 
-/#/
+* /#/
 ![result](https://raw.githubusercontent.com/v4if/cheat-sheet-axe/master/2017-03-03-160556.png)
 
-/#/sheet/:index
-![result](https://raw.githubusercontent.com/v4if/cheat-sheet-axe/master/2017-03-03-160556.png)
+* /#/sheet/:index
+![result](https://raw.githubusercontent.com/v4if/cheat-sheet-axe/master/2017-03-03-160539.png)
 
-/#/sheet-preview/:index
-![result](https://raw.githubusercontent.com/v4if/cheat-sheet-axe/master/2017-03-03-160556.png)
+* /#/sheet-preview/:index
+![result](https://raw.githubusercontent.com/v4if/cheat-sheet-axe/master/2017-03-03-160523.png)
 
 ## 在线预览
 

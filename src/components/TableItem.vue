@@ -1,14 +1,26 @@
 <template xmlns:v-on="http://www.w3.org/1999/xhtml">
   <div class="table-item">
 
-    <div class="table-header">
-      <textarea type="text" class="header-text" cols="0" rows="1" v-model="tableHeader"
-                v-on:click.capture.stop="doNothing" v-on:blur="updateTableHeader">
-      </textarea>
+    <el-row :gutter="20" class="table-header">
+      <el-col :span="16">
+        <textarea type="text" class="header-text" cols="0" rows="1" v-model="tableHeader"
+                  v-on:click.capture.stop="doNothing" v-on:blur="updateTableHeader">
+        </textarea>
+      </el-col>
+      <el-col :span="8">
+        <el-button type="primary" icon="edit" v-on:click="addItem"></el-button>
+        <el-button type="danger" icon="delete" v-on:click="delTable"></el-button>
+      </el-col>
+    </el-row>
 
-      <el-button type="primary" icon="edit" v-on:click="addItem"></el-button>
-      <el-button type="danger" icon="delete" v-on:click="delTable"></el-button>
-    </div>
+    <!--<div class="table-header">-->
+      <!--<textarea type="text" class="header-text" cols="0" rows="1" v-model="tableHeader"-->
+                <!--v-on:click.capture.stop="doNothing" v-on:blur="updateTableHeader">-->
+      <!--</textarea>-->
+
+      <!--<el-button type="primary" icon="edit" v-on:click="addItem"></el-button>-->
+      <!--<el-button type="danger" icon="delete" v-on:click="delTable"></el-button>-->
+    <!--</div>-->
 
     <div v-if="items.length > 0">
       <el-collapse v-bind:value="new Array(items.length).fill(0).map((element, idx) => {return idx;})">
@@ -20,7 +32,7 @@
             <i class="el-icon-minus" v-on:click.capture.stop="delItem(index)"></i>
           </template>
 
-          <textarea type="text" class="info-text" cols="0" rows="2" v-model="item.info"
+          <textarea type="text" class="info-text" cols="0" rows="3" v-model="item.info"
                     v-on:click.capture.stop="doNothing">
           </textarea>
         </el-collapse-item>
@@ -105,6 +117,7 @@
   textarea[type="text"].header-text {
     /* 禁止拖动、可以消除右下角图标 */
     resize: none;
+    width: 100%;
     padding: 0;
     vertical-align: middle;
     font-weight: bold;
@@ -116,7 +129,7 @@
   textarea[type="text"].title-text {
     width: 85%;
     /* 隐藏滚动条 */
-    overflow-y:hidden;
+    /*overflow-y:hidden;*/
     vertical-align: bottom;
     padding: 0 5px 12px 5px;
   }

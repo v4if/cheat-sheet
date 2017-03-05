@@ -37,7 +37,7 @@
         },
         deleteSheet (index) {
             this.sheets.splice(index, 1);
-            return false;
+            Storage.store(this.sheets);
         }
     }
   }

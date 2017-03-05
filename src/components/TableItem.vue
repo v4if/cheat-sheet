@@ -130,8 +130,8 @@
     width: 85%;
     /* 隐藏滚动条 */
     /*overflow-y:hidden;*/
-    vertical-align: bottom;
-    padding: 0 5px 12px 5px;
+    vertical-align: middle;
+    /*padding: 12px 5px 0 5px;*/
   }
 
   textarea[type="text"].info-text {

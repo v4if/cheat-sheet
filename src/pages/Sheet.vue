@@ -91,7 +91,8 @@
       },
       saveSheet () {
           var upNew = Storage.fetch();
-          upNew[upNew.length - 1] = {
+          var updateIndex = this.$route.params.index === 'new' ? upNew.length - 1 : this.$route.params.index;
+          upNew[updateIndex] = {
             name: this.sheet.name,
             tableItems: this.sheet.tableItems
           };

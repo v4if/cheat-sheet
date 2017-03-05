@@ -1,8 +1,8 @@
 <template>
   <div id="home">
     <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
-    <router-link v-bind:to="'/sheet/' + (sheets.length - 1)">
-      <el-button type="primary" icon="plus" v-on:click="addNewSheet">New Cheat Sheet</el-button>
+    <router-link to="/sheet/new">
+      <el-button type="primary" icon="plus">New Cheat Sheet</el-button>
     </router-link>
 
     <div v-if="sheets.length > 0">
@@ -26,15 +26,6 @@
       };
     },
     methods: {
-        addNewSheet () {
-            this.sheets.push(
-              {
-                  name: "Sheet Axe",
-                  tableItems: []
-              }
-            );
-            Storage.store(this.sheets);
-        },
         deleteSheet (index) {
             this.sheets.splice(index, 1);
             Storage.store(this.sheets);

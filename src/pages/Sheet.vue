@@ -41,9 +41,24 @@
 
   export default {
     data () {
-        return {
+        if (this.$route.params.index === 'new') {
+          var upNew = Storage.fetch();
+          var $sheet = {
+            name: "Sheet Axe",
+            tableItems: []
+          };
+
+          upNew.push($sheet);
+
+          Storage.store(upNew);
+          return {
+              sheet: $sheet
+          };
+        } else {
+          return {
             sheet: Storage.fetch()[this.$route.params.index] || null
-        };
+          };
+        }
     },
     components: {
       AddInput,
@@ -76,7 +91,7 @@
       },
       saveSheet () {
           var upNew = Storage.fetch();
-          upNew[this.$route.params.index] = {
+          upNew[upNew.length - 1] = {
             name: this.sheet.name,
             tableItems: this.sheet.tableItems
           };

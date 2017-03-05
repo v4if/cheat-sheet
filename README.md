@@ -1,7 +1,7 @@
 # cheat-sheet-axe ![Language](https://img.shields.io/badge/language-vuejs-blue.svg?style=flat-square)
-基于vuejs的在线参考手册生成器
+基于vuejs的在线 [ 参考手册 | 速查表 ] 生成器
 
-* 用于将常用快捷键、零碎知识点等参考手册整理在一起
+* 用于将常用快捷键、零碎知识点等整理在一起
 * 并支持Preview预览，截图便于保存
 * 支持localStorage本地浏览器存储
 

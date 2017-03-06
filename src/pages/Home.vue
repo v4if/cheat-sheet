@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
-    <router-link to="/sheet/new">
+    <router-link v-bind:to="{name:'Sheet', params: {index:'new', len:sheets.length}}">
       <el-button type="primary" icon="plus">New Cheat Sheet</el-button>
     </router-link>
 

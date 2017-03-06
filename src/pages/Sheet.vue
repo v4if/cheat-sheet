@@ -42,15 +42,21 @@
   export default {
     data () {
         if (this.$route.params.index === 'new') {
-          var upNew = Storage.fetch();
-          var $sheet = {
-            name: "Sheet Axe",
-            tableItems: []
-          };
+          var fetchSheets = Storage.fetch();
 
-          upNew.push($sheet);
+          var $sheet;
+          if (fetchSheets.length <= this.$route.params.len) {
+            $sheet = {
+              name: "Sheet Axe",
+              tableItems: []
+            };
 
-          Storage.store(upNew);
+            fetchSheets.push($sheet);
+            Storage.store(fetchSheets);
+          } else {
+            $sheet = fetchSheets[fetchSheets.length - 1];
+          }
+
           return {
               sheet: $sheet
           };

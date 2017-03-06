@@ -21,8 +21,10 @@
 
   export default {
     data () {
+      var fetchSheets = Storage.fetch();
+
       return {
-        sheet: Storage.fetch()[this.$route.params.index] || null
+          sheet: this.$route.params.index === 'new' ? fetchSheets[fetchSheets.length - 1] : fetchSheets[this.$route.params.index]
       };
     },
     components: {
